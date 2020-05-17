@@ -1,0 +1,132 @@
+/*!
+\file dynamicCircle.cpp
+*/
+
+#include "dynamicCircle.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+
+DynamicCircle::DynamicCircle(b2World * world, sf::Vector2f position, float radius, float orientation, sf::Color colour)
+{
+	
+	
+
+	b2BodyDef l_bodyDef;
+	b2CircleShape l_shape;
+	b2FixtureDef l_fixtureDef;
+	l_bodyDef.type = b2_dynamicBody;
+	l_bodyDef.position.Set(position.x, position.y);
+	l_bodyDef.angle = orientation * DEG2RAD;
+
+	
+
+	m_body = world->CreateBody(&l_bodyDef);
+	m_body->SetUserData(this); // used by our contact listener
+
+	l_shape.m_radius = radius;
+
+	l_fixtureDef.density = mk_fDensity;
+	l_fixtureDef.friction = mk_fFriction;
+	l_fixtureDef.restitution = mk_fRestitution;
+	l_fixtureDef.shape = &l_shape;
+
+	m_body->CreateFixture(&l_fixtureDef);
+
+	
+	
+	
+//m_body->ApplyLinearImpulseToCenter(b2Vec2(0.1f, -0.0f), true); // Set the puck moving
+
+	setPosition(position);
+	setRadius(radius);
+	setOrigin(radius, radius);
+	setRotation(orientation);
+	setFillColor(colour);
+}
+
+
+void DynamicCircle::keyPress(sf::Keyboard::Key key) {
+	
+	
+	if (key == sf::Keyboard::A) {
+		
+		m_body->ApplyLinearImpulseToCenter(b2Vec2(1.f, 0.0f), true);  //I just want it to run this line.
+		
+		
+		
+
+		cout << "key pressed" << endl;
+		
+		
+		
+	}
+
+	/*if (b2_dynamicBody == nullptr) {
+		cout << "kms" << endl;
+	
+	}*/
+
+}
+
+
+/*
+b2World DynamicCircle::getWorld() {
+
+	//try making world it's own class
+	
+}
+
+sf::Vector2f DynamicCircle::getPos() {
+
+}
+float DynamicCircle::getOr() {
+
+
+}
+
+float DynamicCircle::getRad()
+{
+
+
+}
+
+sf::Color DynamicCircle::getCol() 
+{
+
+}
+
+
+*/
+
+void DynamicCircle::update()
+{
+	b2Vec2 pos = m_body->GetPosition();
+	setPosition(pos.x, pos.y);
+	float angle = m_body->GetAngle()* RAD2DEG;
+	setRotation(angle);
+	
+	
+	
+
+	
+
+}
+
+
+
+
+void DynamicCircle::draw(sf::RenderTarget & target, sf::RenderStates states) const
+{
+	target.draw((sf::CircleShape)*this); // Draw the Circle Shape
+
+	// Add a line
+	sf::RectangleShape line(sf::Vector2f(getRadius(), 0.01f));
+	line.setPosition(getPosition());
+	line.setOrigin(0.f, 0.005f);
+	line.rotate(getRotation());
+	target.draw(line);
+}
