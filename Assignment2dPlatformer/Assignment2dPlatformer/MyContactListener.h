@@ -1,10 +1,22 @@
 #pragma once
 
+
+/*!
+\file MyContactListener.h
+*/
+
+
 #include <Box2d\Box2D.h>
 #include <vector>
 #include <algorithm>
+#include "dynamicCircle.h"
 
-struct MyContact {
+
+/*!
+\brief Creation of contact listener for the puck/circle.
+*/
+
+/*struct MyContact {
 	b2Fixture *fixtureA;
 	b2Fixture *fixtureB;
 	bool operator==(const MyContact& other) const
@@ -26,5 +38,37 @@ public:
 	virtual void PreSolve(b2Contact* contact, const b2Manifold* oldManifold);
 	virtual void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse);
 
+};
+*/
+
+class MyContactListener : public b2ContactListener
+{
+	void BeginContact(b2Contact* contact) {
+
+		//check if fixture A was a ball
+		void* bodyUserData = contact->GetFixtureA()->GetBody()->GetUserData();
+		if (bodyUserData)
+			DynamicCircle().startContact();
+
+		//check if fixture B was a ball
+		bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
+		if (bodyUserData)
+			DynamicCircle().startContact();
+
+	}
+
+	void EndContact(b2Contact* contact) {
+
+		//check if fixture A was a ball
+		void* bodyUserData = contact->GetFixtureA()->GetBody()->GetUserData();
+		if (bodyUserData)
+			DynamicCircle().endContact();
+
+		//check if fixture B was a ball
+		bodyUserData = contact->GetFixtureB()->GetBody()->GetUserData();
+		if (bodyUserData)
+			DynamicCircle().endContact();
+
+	}
 };
 

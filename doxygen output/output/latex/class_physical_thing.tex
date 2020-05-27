@@ -1,0 +1,61 @@
+\hypertarget{class_physical_thing}{}\doxysection{Physical\+Thing Class Reference}
+\label{class_physical_thing}\index{PhysicalThing@{PhysicalThing}}
+
+
+A simple class with common attributes and a few values used in a few places.  
+
+
+
+
+{\ttfamily \#include $<$physical\+Thing.\+h$>$}
+
+Inheritance diagram for Physical\+Thing\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_physical_thing}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_physical_thing_af19c0d5df32f7da216fcd111c4e34a9c}\label{class_physical_thing_af19c0d5df32f7da216fcd111c4e34a9c}} 
+void {\bfseries set\+User\+Data} (void $\ast$data)
+\item 
+b2\+Body $\ast$ \mbox{\hyperlink{class_physical_thing_afa6802392e288501093e6395db713e25}{get\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Set the userdata of the body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_physical_thing_abe8104571d70d92609f154d522ce9880}\label{class_physical_thing_abe8104571d70d92609f154d522ce9880}} 
+b2\+Body $\ast$ \mbox{\hyperlink{class_physical_thing_abe8104571d70d92609f154d522ce9880}{m\+\_\+body}} = nullptr
+\begin{DoxyCompactList}\small\item\em Box2D body, no need to delete this as B\+O\+X2D will look after it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_physical_thing_a40f7ce94212f8154e8e4a9864cde7c60}\label{class_physical_thing_a40f7ce94212f8154e8e4a9864cde7c60}} 
+float \mbox{\hyperlink{class_physical_thing_a40f7ce94212f8154e8e4a9864cde7c60}{mk\+\_\+f\+Density}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em Density of the material -\/ used to give mass. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_physical_thing_abb796eeea3127d7a77d84e1e43a3987d}\label{class_physical_thing_abb796eeea3127d7a77d84e1e43a3987d}} 
+float \mbox{\hyperlink{class_physical_thing_abb796eeea3127d7a77d84e1e43a3987d}{mk\+\_\+f\+Friction}} = 0.\+4f
+\begin{DoxyCompactList}\small\item\em Friction -\/ I guess this is only friction from movement, not when static. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_physical_thing_a6dbc7fdac106d2c4966d42cf27ce2c58}\label{class_physical_thing_a6dbc7fdac106d2c4966d42cf27ce2c58}} 
+float \mbox{\hyperlink{class_physical_thing_a6dbc7fdac106d2c4966d42cf27ce2c58}{mk\+\_\+f\+Restitution}} = 0.\+6f
+\begin{DoxyCompactList}\small\item\em Restitution -\/ bouncyness of stuff. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple class with common attributes and a few values used in a few places. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_physical_thing_afa6802392e288501093e6395db713e25}\label{class_physical_thing_afa6802392e288501093e6395db713e25}} 
+\index{PhysicalThing@{PhysicalThing}!getBody@{getBody}}
+\index{getBody@{getBody}!PhysicalThing@{PhysicalThing}}
+\doxysubsubsection{\texorpdfstring{getBody()}{getBody()}}
+{\footnotesize\ttfamily b2\+Body$\ast$ Physical\+Thing\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the userdata of the body. 
+
+Get the body 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Desktop/\+Year 2/\+A\+D\+V\+A\+N\+C\+E\+D C++/\+Assignment/\+Try 1/\+Assignment2d\+Platformer/\+Assignment2d\+Platformer/\mbox{\hyperlink{physical_thing_8h}{physical\+Thing.\+h}}\end{DoxyCompactItemize}

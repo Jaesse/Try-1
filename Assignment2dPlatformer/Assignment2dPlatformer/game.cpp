@@ -24,7 +24,7 @@ Game::Game()
 	m_collectableCoin.resize(1);
 	m_collectableCoin[0] = Collectable(m_pWorld, sf::Vector2f(0.f, 1.f), sf::Vector2f(0.2f, 0.2f), 0.f, sf::Color::Yellow);
 
-	m_leftPaddle = Paddle(m_pWorld, sf::Vector2f(3.f, -1.5f), sf::Vector2f(0.1f, 0.8f), 0.0f, sf::Color::Red);
+	m_leftPaddle = Paddle(m_pWorld, sf::Vector2f(-0.5f, 1.5f), sf::Vector2f(0.1f, 0.8f), 0.0f, sf::Color::Red);
 	m_leftPaddle.setUserData(&m_leftPaddle);
 
 	m_rightPaddle = Paddle(m_pWorld, sf::Vector2f(3.5f, -1.5f), sf::Vector2f(0.1f, 0.8f), 0.0f, sf::Color::Blue);
@@ -78,7 +78,9 @@ void Game::Loop()
 
 		}
 
-		std::vector<MyContact>::iterator pos;
+		
+
+	/*	std::vector<MyContact>::iterator pos;
 		for (pos = _contactListener->_contacts.begin();
 			pos != _contactListener->_contacts.end(); ++pos) {
 			MyContact contact = *pos;
@@ -88,7 +90,7 @@ void Game::Loop()
 
 			}
 
-		}
+		}*/
 
 
 		// Find out how much time has elapsed

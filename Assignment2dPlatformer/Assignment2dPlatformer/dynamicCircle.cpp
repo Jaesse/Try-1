@@ -2,6 +2,9 @@
 \file dynamicCircle.cpp
 */
 
+
+
+
 #include "dynamicCircle.h"
 #include <iostream>
 #include <string>
@@ -13,7 +16,7 @@ using namespace std;
 DynamicCircle::DynamicCircle(b2World * world, sf::Vector2f position, float radius, float orientation, sf::Color colour)
 {
 	
-	
+	m_contacting = false;
 
 	b2BodyDef l_bodyDef;
 	b2CircleShape l_shape;
@@ -39,6 +42,7 @@ DynamicCircle::DynamicCircle(b2World * world, sf::Vector2f position, float radiu
 	
 	
 	
+	
 //m_body->ApplyLinearImpulseToCenter(b2Vec2(0.1f, -0.0f), true); // Set the puck moving
 
 	setPosition(position);
@@ -59,11 +63,48 @@ void DynamicCircle::keyPress(sf::Keyboard::Key key) {
 		
 		
 
-		cout << "key pressed" << endl;
+		cout << "key pressed left" << endl;
 		
 		
 		
 	}
+	else if (key == sf::Keyboard::W) {
+
+		m_body->ApplyLinearImpulseToCenter(b2Vec2(0.f, -1.0f), true);  //I just want it to run this line.
+
+
+
+
+		cout << "key pressed up" << endl;
+
+
+
+	}
+	else if (key == sf::Keyboard::S) {
+
+		m_body->ApplyLinearImpulseToCenter(b2Vec2(0.f, 1.0f), true);  //I just want it to run this line.
+
+
+
+
+		cout << "key pressed down" << endl;
+
+
+
+	}
+	else if (key == sf::Keyboard::D) {
+
+		m_body->ApplyLinearImpulseToCenter(b2Vec2(-1.f, 0.0f), true);  //I just want it to run this line.
+
+
+
+
+		cout << "key pressed right" << endl;
+
+
+
+	}
+
 
 	/*if (b2_dynamicBody == nullptr) {
 		cout << "kms" << endl;
@@ -128,5 +169,8 @@ void DynamicCircle::draw(sf::RenderTarget & target, sf::RenderStates states) con
 	line.setPosition(getPosition());
 	line.setOrigin(0.f, 0.005f);
 	line.rotate(getRotation());
+
 	target.draw(line);
+
+	if (m_contacting) { cout << "touched something" << endl; }
 }

@@ -11,7 +11,7 @@
 #include "physicalThing.h"
 
 /*! \class DynamicCircle
-\brief A simple circle which can move, rotate and collide with stuff
+\brief Initiation of a Circle which can move, rotate and collide with other objects
 */
 
 class DynamicCircle : public sf::CircleShape, public PhysicalThing
@@ -27,7 +27,19 @@ public:
 	float getOr();
 	sf::Color getCol();*/
 	
-	void keyPress(sf::Keyboard::Key key);
+	bool m_contacting;
+	
+
+	void startContact() { m_contacting = true; }//!<On collision with another object, set m_contacting to true
+	
+	
+	void endContact() { m_contacting = false; }//!<On end collision with another object, set m_contacting to false
+	
+	
+	
+
+	
+	void keyPress(sf::Keyboard::Key key);//!<Get user input and move puck in direction
 	void update(); //!< Update rendering infomation 
 	void draw(sf::RenderTarget &target, sf::RenderStates states) const; //!< Overridden drawing methos to include line to allow users to see oreintation of the ball
 };

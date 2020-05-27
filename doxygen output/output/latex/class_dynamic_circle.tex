@@ -1,0 +1,66 @@
+\hypertarget{class_dynamic_circle}{}\doxysection{Dynamic\+Circle Class Reference}
+\label{class_dynamic_circle}\index{DynamicCircle@{DynamicCircle}}
+
+
+Initiation of a Circle which can move, rotate and collide with other objects.  
+
+
+
+
+{\ttfamily \#include $<$dynamic\+Circle.\+h$>$}
+
+Inheritance diagram for Dynamic\+Circle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dynamic_circle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dynamic_circle_afa9399d123184a9543aac06229b8abe1}{Dynamic\+Circle}} (b2\+World $\ast$world, sf\+::\+Vector2f position, float radius, float orientation, sf\+::\+Color colour)
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dynamic_circle_a86b1b2c6004838abb6dfb3136d428ce7}\label{class_dynamic_circle_a86b1b2c6004838abb6dfb3136d428ce7}} 
+void \mbox{\hyperlink{class_dynamic_circle_a86b1b2c6004838abb6dfb3136d428ce7}{start\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em On collision with another object, set m\+\_\+contacting to true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dynamic_circle_aa78b355872dbb48b9d9545390a6030d4}\label{class_dynamic_circle_aa78b355872dbb48b9d9545390a6030d4}} 
+void \mbox{\hyperlink{class_dynamic_circle_aa78b355872dbb48b9d9545390a6030d4}{end\+Contact}} ()
+\begin{DoxyCompactList}\small\item\em On end collision with another object, set m\+\_\+contacting to false. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dynamic_circle_a35358d011254926063b22d86afed8b49}\label{class_dynamic_circle_a35358d011254926063b22d86afed8b49}} 
+void \mbox{\hyperlink{class_dynamic_circle_a35358d011254926063b22d86afed8b49}{key\+Press}} (sf\+::\+Keyboard\+::\+Key key)
+\begin{DoxyCompactList}\small\item\em Get user input and move puck in direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dynamic_circle_a7ecfe80184c7ed16d23283108ade111f}\label{class_dynamic_circle_a7ecfe80184c7ed16d23283108ade111f}} 
+void \mbox{\hyperlink{class_dynamic_circle_a7ecfe80184c7ed16d23283108ade111f}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update rendering infomation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dynamic_circle_af8656c4fc016a5093fb107c91843ed0c}\label{class_dynamic_circle_af8656c4fc016a5093fb107c91843ed0c}} 
+void \mbox{\hyperlink{class_dynamic_circle_af8656c4fc016a5093fb107c91843ed0c}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const
+\begin{DoxyCompactList}\small\item\em Overridden drawing methos to include line to allow users to see oreintation of the ball. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_dynamic_circle_ac939fe180b319793d592dd8d93a99165}\label{class_dynamic_circle_ac939fe180b319793d592dd8d93a99165}} 
+bool {\bfseries m\+\_\+contacting}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Initiation of a Circle which can move, rotate and collide with other objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dynamic_circle_afa9399d123184a9543aac06229b8abe1}\label{class_dynamic_circle_afa9399d123184a9543aac06229b8abe1}} 
+\index{DynamicCircle@{DynamicCircle}!DynamicCircle@{DynamicCircle}}
+\index{DynamicCircle@{DynamicCircle}!DynamicCircle@{DynamicCircle}}
+\doxysubsubsection{\texorpdfstring{DynamicCircle()}{DynamicCircle()}}
+{\footnotesize\ttfamily Dynamic\+Circle\+::\+Dynamic\+Circle (\begin{DoxyParamCaption}\item[{b2\+World $\ast$}]{world,  }\item[{sf\+::\+Vector2f}]{position,  }\item[{float}]{radius,  }\item[{float}]{orientation,  }\item[{sf\+::\+Color}]{colour }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+Complete contructor 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Desktop/\+Year 2/\+A\+D\+V\+A\+N\+C\+E\+D C++/\+Assignment/\+Try 1/\+Assignment2d\+Platformer/\+Assignment2d\+Platformer/\mbox{\hyperlink{dynamic_circle_8h}{dynamic\+Circle.\+h}}\item 
+D\+:/\+Desktop/\+Year 2/\+A\+D\+V\+A\+N\+C\+E\+D C++/\+Assignment/\+Try 1/\+Assignment2d\+Platformer/\+Assignment2d\+Platformer/\mbox{\hyperlink{dynamic_circle_8cpp}{dynamic\+Circle.\+cpp}}\end{DoxyCompactItemize}

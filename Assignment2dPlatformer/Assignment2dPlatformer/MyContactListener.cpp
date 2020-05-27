@@ -1,5 +1,5 @@
 #include "MyContactListener.h"
-MyContactListener::MyContactListener() : _contacts() {
+/*MyContactListener::MyContactListener() : _contacts() {
 }
 
 MyContactListener::~MyContactListener() {
@@ -27,4 +27,6 @@ void MyContactListener::PreSolve(b2Contact* contact,
 
 void MyContactListener::PostSolve(b2Contact* contact,
 	const b2ContactImpulse* impulse) {
-}
+}*/
+
+

@@ -1,0 +1,95 @@
+\hypertarget{class_game}{}\doxysection{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+
+
+Holds all information about the game, blocks, balls etc and allows updating and rendering.  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+Inheritance diagram for Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}\label{class_game_ad59df6562a58a614fda24622d3715b65}} 
+\mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\begin{DoxyCompactList}\small\item\em Constructor which sets up the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destructor which cleans all the pointer memory up. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a28d8a0a65bda89be42d9c46fc2e4f14b}\label{class_game_a28d8a0a65bda89be42d9c46fc2e4f14b}} 
+void \mbox{\hyperlink{class_game_a28d8a0a65bda89be42d9c46fc2e4f14b}{Loop}} ()
+\begin{DoxyCompactList}\small\item\em Sets up game loop (Renders events etc..) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_acc8519c7ced1cf9eb9bbb3a2f325f6a0}\label{class_game_acc8519c7ced1cf9eb9bbb3a2f325f6a0}} 
+void \mbox{\hyperlink{class_game_acc8519c7ced1cf9eb9bbb3a2f325f6a0}{update}} (float timestep)
+\begin{DoxyCompactList}\small\item\em Update the game with give timestep. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a143d1a2f8a527db60f1fe47ab3d854a7}\label{class_game_a143d1a2f8a527db60f1fe47ab3d854a7}} 
+void \mbox{\hyperlink{class_game_a143d1a2f8a527db60f1fe47ab3d854a7}{draw}} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const
+\begin{DoxyCompactList}\small\item\em Draw the game to the render context. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_aafc474b47e358aa7d811f750591b8624}\label{class_game_aafc474b47e358aa7d811f750591b8624}} 
+void \mbox{\hyperlink{class_game_aafc474b47e358aa7d811f750591b8624}{toggle\+Debug}} ()
+\begin{DoxyCompactList}\small\item\em Toggle for debug drawing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_game_a51703bfa0cba4db2f2c010ca77328cc2}\label{class_game_a51703bfa0cba4db2f2c010ca77328cc2}} 
+sf\+::\+View \mbox{\hyperlink{class_game_a51703bfa0cba4db2f2c010ca77328cc2}{m\+\_\+view}}
+\begin{DoxyCompactList}\small\item\em The view maps from physical co-\/ordinates to rendering co-\/ordinates. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a362b54f875fd9373476f7b2878a697b9}\label{class_game_a362b54f875fd9373476f7b2878a697b9}} 
+sf\+::\+Vector2f \mbox{\hyperlink{class_game_a362b54f875fd9373476f7b2878a697b9}{m\+\_\+world\+Size}} = sf\+::\+Vector2f(8.f, 6.f)
+\begin{DoxyCompactList}\small\item\em Size of the physical worlds is 8 X 6 metres. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_aece97c98f56f0ec078ff63893c4e093d}\label{class_game_aece97c98f56f0ec078ff63893c4e093d}} 
+b2\+World $\ast$ \mbox{\hyperlink{class_game_aece97c98f56f0ec078ff63893c4e093d}{m\+\_\+p\+World}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the Box2D world. Using pointers as B\+O\+X2D has it\textquotesingle{}s own memory management. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a000890af67b5247ba66479eef37f837c}\label{class_game_a000890af67b5247ba66479eef37f837c}} 
+const int \mbox{\hyperlink{class_game_a000890af67b5247ba66479eef37f837c}{mk\+\_\+i\+Vel\+Iterations}} = 7
+\begin{DoxyCompactList}\small\item\em On each update there will be 7 velocity iterations in the physics engine. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a3a9e1c1ff454e4f1dd21e6398530fb30}\label{class_game_a3a9e1c1ff454e4f1dd21e6398530fb30}} 
+const int \mbox{\hyperlink{class_game_a3a9e1c1ff454e4f1dd21e6398530fb30}{mk\+\_\+i\+Pos\+Iterations}} = 5
+\begin{DoxyCompactList}\small\item\em On each update there will be 5 position iterations on each update. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a4fd94489bec502630877a3a7fccbd596}\label{class_game_a4fd94489bec502630877a3a7fccbd596}} 
+const b2\+Vec2 \mbox{\hyperlink{class_game_a4fd94489bec502630877a3a7fccbd596}{mk\+\_\+gravity}} = b2\+Vec2(0.f, 1.f)
+\begin{DoxyCompactList}\small\item\em Standard earth gravity will be used (negate the value ofcourse!) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a8604ec6203f31ac5603bd597f49834d0}\label{class_game_a8604ec6203f31ac5603bd597f49834d0}} 
+bool \mbox{\hyperlink{class_game_a8604ec6203f31ac5603bd597f49834d0}{m\+\_\+debug}} = false
+\begin{DoxyCompactList}\small\item\em Toggle for debug drawing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a97864905251b06ce5c8ae7c6774e423d}\label{class_game_a97864905251b06ce5c8ae7c6774e423d}} 
+\mbox{\hyperlink{class_s_f_m_l_debug_draw}{S\+F\+M\+L\+Debug\+Draw}} \mbox{\hyperlink{class_game_a97864905251b06ce5c8ae7c6774e423d}{m\+\_\+debug\+Draw}}
+\begin{DoxyCompactList}\small\item\em Box2D debug drawing. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_ade71939ff533c53002d50cc5c6148d2f}\label{class_game_ade71939ff533c53002d50cc5c6148d2f}} 
+\mbox{\hyperlink{class_dynamic_circle}{Dynamic\+Circle}} \mbox{\hyperlink{class_game_ade71939ff533c53002d50cc5c6148d2f}{m\+\_\+puck}}
+\begin{DoxyCompactList}\small\item\em Pong puck. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a03aca82f0f2b0e3b503acf3f668d3cfc}\label{class_game_a03aca82f0f2b0e3b503acf3f668d3cfc}} 
+std\+::vector$<$ \mbox{\hyperlink{class_static_block}{Static\+Block}} $>$ \mbox{\hyperlink{class_game_a03aca82f0f2b0e3b503acf3f668d3cfc}{m\+\_\+static\+Blocks}}
+\begin{DoxyCompactList}\small\item\em Walls. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a935824904116993550ba8c8b385356af}\label{class_game_a935824904116993550ba8c8b385356af}} 
+\mbox{\hyperlink{class_paddle}{Paddle}} \mbox{\hyperlink{class_game_a935824904116993550ba8c8b385356af}{m\+\_\+left\+Paddle}}
+\begin{DoxyCompactList}\small\item\em Moving block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a0d1f580514bb67714ceeda66421eac4a}\label{class_game_a0d1f580514bb67714ceeda66421eac4a}} 
+\mbox{\hyperlink{class_paddle}{Paddle}} \mbox{\hyperlink{class_game_a0d1f580514bb67714ceeda66421eac4a}{m\+\_\+right\+Paddle}}
+\begin{DoxyCompactList}\small\item\em Moving block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_game_a94b38b0c0360f16c63a085da1e3e4988}\label{class_game_a94b38b0c0360f16c63a085da1e3e4988}} 
+\mbox{\hyperlink{classmoving_block}{moving\+Block}} {\bfseries m\+\_\+moving\+Plat}
+\item 
+\mbox{\Hypertarget{class_game_a6b11451fb371a787022e163e1f87b44a}\label{class_game_a6b11451fb371a787022e163e1f87b44a}} 
+\mbox{\hyperlink{class_my_contact_listener}{My\+Contact\+Listener}} $\ast$ {\bfseries \+\_\+contact\+Listener}
+\item 
+\mbox{\Hypertarget{class_game_afb7a1dbe396f81e162876add37bf03bb}\label{class_game_afb7a1dbe396f81e162876add37bf03bb}} 
+std\+::vector$<$ \mbox{\hyperlink{class_collectable}{Collectable}} $>$ {\bfseries m\+\_\+collectable\+Coin}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds all information about the game, blocks, balls etc and allows updating and rendering. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Desktop/\+Year 2/\+A\+D\+V\+A\+N\+C\+E\+D C++/\+Assignment/\+Try 1/\+Assignment2d\+Platformer/\+Assignment2d\+Platformer/\mbox{\hyperlink{game_8h}{game.\+h}}\item 
+D\+:/\+Desktop/\+Year 2/\+A\+D\+V\+A\+N\+C\+E\+D C++/\+Assignment/\+Try 1/\+Assignment2d\+Platformer/\+Assignment2d\+Platformer/\mbox{\hyperlink{game_8cpp}{game.\+cpp}}\end{DoxyCompactItemize}

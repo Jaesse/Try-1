@@ -49,7 +49,7 @@ private:
 public:
 	Game(); //!< Constructor which sets up the game
 	~Game(); //!< Destructor which cleans all the pointer memory up
-	void Loop();
+	void Loop(); //!< Sets up game loop (Renders events etc..)
 
 
 
